@@ -1,0 +1,116 @@
+/* Anuranan NGO Website Styles */
+:root {
+  --primary: #008080;
+  --secondary: #2e7d32;
+  --background: #f5f5f5;
+  --white: #fff;
+  --text: #222;
+  --accent: #4caf50;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+}
+
+header {
+  background: var(--primary);
+  color: var(--white);
+  padding: 1.5rem 0 1rem 0;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: var(--secondary);
+  padding: 0.75rem 0;
+}
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--accent);
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 2rem;
+}
+
+footer {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+h1, h2, h3 {
+  color: var(--primary);
+}
+
+.card {
+  background: var(--background);
+  border-radius: 6px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  main {
+    padding: 1rem;
+  }
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+img.responsive {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--secondary);
+}
+input, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+input[type="submit"] {
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+input[type="submit"]:hover {
+  background: var(--secondary);
+}
