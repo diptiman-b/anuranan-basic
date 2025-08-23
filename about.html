@@ -11,11 +11,18 @@
     <h1>About Anuranan</h1>
   </header>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="news.html">News</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact Us</a>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="news.html">News</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
   </nav>
   <main>
     <section class="card">
@@ -38,5 +45,13 @@
   <footer>
     <p>&copy; 2025 Anuranan NGO. All rights reserved.</p>
   </footer>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', function() {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

@@ -11,18 +11,25 @@
     <h1>Contact Us</h1>
   </header>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="news.html">News</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact Us</a>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="news.html">News</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
   </nav>
   <main>
     <section class="card">
       <h2>Get in Touch</h2>
-      <p>Email: <a href="mailto:mailtoanuranan@gmail.com">mailtoanuranan@gmail.com</a><br>
+      <p>Email: <a href="mailto:info@anuranan.org">info@anuranan.org</a><br>
          Phone: <a href="tel:+911234567890">+91 12345 67890</a><br>
-         Address: Mission Para, Rahara, Kolkata, India, West Bengal</p>
+         Address: 123, Community Lane, Kolkata, India</p>
     </section>
     <section class="card">
       <h2>Contact Form</h2>
@@ -50,5 +57,13 @@
   <footer>
     <p>&copy; 2025 Anuranan NGO. All rights reserved.</p>
   </footer>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', function() {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
