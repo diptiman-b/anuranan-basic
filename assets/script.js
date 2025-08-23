@@ -1,33 +1,36 @@
 // Interactivity for Anuranan Website
+// Load common header section from header.html
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('header');
+  if (header) {
+    fetch('assets/header.html')
+      .then(response => response.text())
+      .then(html => {
+        header.innerHTML = html;
+      });
+  }
+});
 // Banner slider for event images (on index.html)
 const bannerImages = [
   "images/events/WhatsApp Image 2025-08-23 at 10.46.21.jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.46.50.jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.48.18.jpeg",
-  "images/events/WhatsApp Image 2025-08-23 at 10.54.58.jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.54.59 (1).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.54.59 (2).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.54.59 (3).jpeg",
-  "images/events/WhatsApp Image 2025-08-23 at 10.54.59.jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.00 (1).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.00 (2).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.00.jpeg",
-  "images/events/WhatsApp Image 2025-08-23 at 10.55.01 (1).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.01 (2).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.01 (3).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.01.jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.02 (1).jpeg",
-  "images/events/WhatsApp Image 2025-08-23 at 10.55.02 (2).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.02 (3).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.02.jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.03 (1).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.03 (2).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.03.jpeg",
-  "images/events/WhatsApp Image 2025-08-23 at 10.55.04 (1).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.04 (2).jpeg",
-  "images/events/WhatsApp Image 2025-08-23 at 10.55.04.jpeg",
-  "images/events/WhatsApp Image 2025-08-23 at 10.55.05 (1).jpeg",
-  "images/events/WhatsApp Image 2025-08-23 at 10.55.05 (2).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.05 (3).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.05.jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.06 (1).jpeg",
