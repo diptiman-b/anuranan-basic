@@ -4,8 +4,8 @@
     .banner-text {
       position: absolute;
       left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      bottom: 2rem;
+      transform: translateX(-50%);
       color: #fff;
       background: rgba(0,0,0,0.45);
       padding: 1rem 2rem;
@@ -17,6 +17,12 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.12);
       z-index: 2;
       pointer-events: none;
+      width: max-content;
+      max-width: 90vw;
+      display: block;
+    }
+    .banner-slider:not(:has(.banner-image[src])) .banner-text {
+      display: none;
     }
     .banner-image {
       width: 100%;
