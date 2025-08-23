@@ -1,0 +1,116 @@
+// Interactivity for Anuranan Website
+// Banner slider for event images (on index.html)
+const bannerImages = [
+  "images/events/WhatsApp Image 2025-08-23 at 10.46.21.jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.46.50.jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.48.18.jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.54.58.jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.54.59 (1).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.54.59 (2).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.54.59 (3).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.54.59.jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.00 (1).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.00 (2).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.00.jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.01 (1).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.01 (2).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.01 (3).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.01.jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.02 (1).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.02 (2).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.02 (3).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.02.jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.03 (1).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.03 (2).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.03.jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.04 (1).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.04 (2).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.04.jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.05 (1).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.05 (2).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.05 (3).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.05.jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.06 (1).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.06 (2).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.06.jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.07 (1).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.07 (2).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.07.jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.08 (1).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.08 (2).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.08.jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.09 (1).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.09 (2).jpeg",
+  "images/events/WhatsApp Image 2025-08-23 at 10.55.09.jpeg"
+];
+const bannerImg = document.querySelector('.banner-image');
+if (bannerImg) {
+  let idx = 0;
+  // Use slower speed for non-home pages
+  let interval = window.location.pathname.endsWith('index.html') ? 3000 : 6000;
+  setInterval(() => {
+    idx = (idx + 1) % bannerImages.length;
+    bannerImg.style.opacity = 0.3;
+    setTimeout(() => {
+      bannerImg.src = bannerImages[idx];
+      bannerImg.style.opacity = 1;
+    }, 400);
+  }, interval);
+}
+
+// Smooth scroll for anchor links
+const navLinks = document.querySelectorAll('.nav-links a');
+navLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = link.getAttribute('href');
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// Modal popup for contact form (on contact.html)
+function showModal(message) {
+  let modal = document.createElement('div');
+  modal.className = 'modal';
+  modal.innerHTML = `<div class="modal-content"><span class="close">&times;</span><p>${message}</p></div>`;
+  document.body.appendChild(modal);
+  modal.querySelector('.close').onclick = () => modal.remove();
+  modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
+}
+if (document.querySelector('form')) {
+  document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    showModal('Thank you for contacting us! We will get back to you soon.');
+    this.reset();
+  });
+}
+
+// Scroll-to-top button
+const scrollBtn = document.createElement('button');
+scrollBtn.innerText = '↑';
+scrollBtn.className = 'scroll-top';
+document.body.appendChild(scrollBtn);
+scrollBtn.style.display = 'none';
+window.addEventListener('scroll', () => {
+  scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
+scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+// Card hover effect (add class for animation)
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mouseenter', () => card.classList.add('hovered'));
+  card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
+});
+
+// Simple image slider for events/news (if images with class 'slider' exist)
+const sliders = document.querySelectorAll('.slider');
+sliders.forEach(slider => {
+  let images = slider.querySelectorAll('img');
+  let idx = 0;
+  setInterval(() => {
+    images.forEach((img, i) => img.style.display = i === idx ? 'block' : 'none');
+    idx = (idx + 1) % images.length;
+  }, 2500);
+});
