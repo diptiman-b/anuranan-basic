@@ -24,6 +24,23 @@ document.addEventListener('DOMContentLoaded', function() {
         this.classList.add('active');
       });
     });
+
+    // Hamburger menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinksContainer = document.getElementById('nav-links');
+    if (menuToggle && navLinksContainer) {
+      menuToggle.addEventListener('click', function() {
+        menuToggle.classList.toggle('active');
+        navLinksContainer.classList.toggle('active');
+      });
+      // Optional: Hide menu after clicking a link (for mobile UX)
+      navLinksContainer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+          menuToggle.classList.remove('active');
+          navLinksContainer.classList.remove('active');
+        });
+      });
+    }
 });
 // Banner slider for event images (on index.html)
 const bannerImages = [
