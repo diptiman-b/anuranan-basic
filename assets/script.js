@@ -9,9 +9,25 @@ document.addEventListener('DOMContentLoaded', function() {
         header.innerHTML = html;
       });
   }
+
+    // Highlight active nav link
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const currentPage = window.location.pathname.split('/').pop();
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPage || (link.getAttribute('href') === 'index.html' && currentPage === '')) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+      link.addEventListener('click', function() {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
 });
 // Banner slider for event images (on index.html)
 const bannerImages = [
+  "images/events/book5.jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.46.21.jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.46.50.jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.48.18.jpeg",
