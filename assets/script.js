@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // Banner slider for event images (on index.html)
 const bannerImages = [
-  "images/events/book5.jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.46.21.jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.46.50.jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.48.18.jpeg",
@@ -66,7 +65,7 @@ const bannerImg = document.querySelector('.banner-image');
 if (bannerImg) {
   let idx = 0;
   // Use slower speed for non-home pages
-  let interval = window.location.pathname.endsWith('index.html') ? 3000 : 6000;
+  let interval = window.location.pathname.endsWith('index.html') ? 4000 : 6000;
   setInterval(() => {
     idx = (idx + 1) % bannerImages.length;
     bannerImg.style.opacity = 0.3;
