@@ -75,7 +75,7 @@ body {
 header {
   background: var(--primary);
   color: var(--white);
-  padding: 1.0rem 0 1rem 0;
+  
   text-align: center;
 }
 
@@ -87,6 +87,7 @@ nav {
 .nav-links {
   display: flex;
   justify-content: center;
+  height: 100;
   gap: 1rem;
 }
 .nav-links a {
@@ -112,13 +113,14 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 40px;
+  width: 48px;
+  height: 100%;
+  min-height: 48px;
   cursor: pointer;
   position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 0;
+  top: 0;
+  transform: none;
   z-index: 2;
 }
 .menu-toggle span {
@@ -186,8 +188,8 @@ h1, h2, h3 {
 
 .card {
   background: var(--background);
-  border-radius: 6px;
-  box-shadow: 0 1px 6px rgba(48, 47, 47, 0.712);
+  border-radius: 16px;
+  box-shadow: 0 1px 10px rgba(48, 47, 47, 0.712);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
 }
