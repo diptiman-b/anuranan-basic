@@ -53,7 +53,6 @@ const bannerImages = [
   "images/events/WhatsApp Image 2025-08-23 at 10.55.00 (1).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.00 (2).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.00.jpeg",
-  "images/events/WhatsApp Image 2025-08-23 at 10.55.01 (2).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.01 (3).jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.01.jpeg",
   "images/events/WhatsApp Image 2025-08-23 at 10.55.02 (1).jpeg",
