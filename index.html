@@ -47,10 +47,10 @@ section{padding:80px 0}
 .btn-ghost{background:transparent;color:var(--forest);border:2px solid var(--forest)}.btn-ghost:hover{background:var(--forest);color:#fff}
 /* NAVBAR */
 #navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;transition:background var(--tr),box-shadow var(--tr)}
-#navbar.scrolled{background:var(--forest-dk);box-shadow:0 2px 20px rgba(0,0,0,.25)}
+#navbar.scrolled{background:#33527b;box-shadow:0 2px 20px rgba(0,0,0,.25)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 1rem;width:min(1200px,95%);margin:0 auto}
 .nav-logo{display:flex;align-items:center}
-.nav-logo img{height:42px;width:auto;}
+.nav-logo img{height:50px;width:auto;}
 .nav-links{display:flex;align-items:center;gap:.15rem}
 .nav-links a{color:rgba(255,255,255,.88);font-size:.88rem;font-weight:500;padding:.4rem .7rem;border-radius:8px;transition:background var(--tr),color var(--tr)}
 .nav-links a:hover{background:rgba(255,255,255,.12);color:#fff}
@@ -63,7 +63,7 @@ section{padding:80px 0}
 .mob-menu a:last-child{border-bottom:none}.mob-menu a:hover{color:var(--gold)}
 @media(max-width:860px){.nav-links,.nav-cta{display:none}.nav-ham{display:flex}}
 /* HERO */
-#home{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 62% 38%,rgba(244,169,66,.22) 0%,transparent 68%),radial-gradient(ellipse 55% 75% at 8% 80%,rgba(232,101,42,.15) 0%,transparent 60%),linear-gradient(155deg,#33527b 0%,#0d2418 100%);display:flex;align-items:center;padding-top:70px;position:relative;overflow:hidden}
+#home{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 62% 38%,rgba(244,169,66,.22) 0%,transparent 68%),radial-gradient(ellipse 55% 75% at 8% 80%,rgba(232,101,42,.15) 0%,transparent 60%),linear-gradient(155deg,#33527b 0%,#06283f 100%);display:flex;align-items:center;padding-top:70px;position:relative;overflow:hidden}
 #home::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.045) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
 .hero-inner{width:min(1180px,92%);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;padding:5rem 0}
 .hero-text{position:relative;z-index:2}
@@ -75,10 +75,10 @@ section{padding:80px 0}
 .hero-stats{display:flex;gap:1.5rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.14);flex-wrap:wrap}
 .hero-stat strong{display:block;font-family:var(--font-d);font-size:1.6rem;font-weight:700;color:var(--gold)}
 .hero-stat span{font-size:.72rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.06em}
-.hero-visual{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.hero-visual{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
 .hcard{background:rgba(255,255,255,.09);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:1.25rem;transition:transform var(--tr)}
 .hcard:hover{transform:translateY(-4px)}
-.hcard:nth-child(2){margin-top:1.5rem}.hcard:nth-child(4){margin-top:-1rem}
+.hcard:nth-child(1){margin-top:1.5rem}.hcard:nth-child(3){margin-top:1.5rem}
 .hcard-icon{font-size:1.5rem;margin-bottom:.5rem}
 .hcard h4{color:#fff;font-size:.92rem;font-family:var(--font-d);margin-bottom:.25rem}
 .hcard p{color:rgba(255,255,255,.62);font-size:.78rem;line-height:1.5}
@@ -156,7 +156,7 @@ section{padding:80px 0}
 .cal-day.has-ev{background:#fff3e0;color:var(--saffron);font-weight:600}.cal-day.empty{cursor:default}
 @media(max-width:840px){.events-layout{grid-template-columns:1fr}.cal-widget{position:static}}
 /* DONATE */
-#donate{background:radial-gradient(ellipse 70% 60% at 20% 50%,rgba(44,110,73,.35) 0%,transparent 60%),radial-gradient(ellipse 60% 70% at 80% 30%,rgba(232,101,42,.2) 0%,transparent 55%),linear-gradient(135deg,#1b4332 0%,#0f2419 100%);color:#fff}
+#donate{background:radial-gradient(ellipse 70% 60% at 20% 50%,rgba(44,110,73,.35) 0%,transparent 60%),radial-gradient(ellipse 60% 70% at 80% 30%,rgba(232,101,42,.2) 0%,transparent 55%),linear-gradient(135deg,#33527b  0%,#022009 100%);color:#fff}
 .donate-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
 .donate-text h2{color:#fff;margin-bottom:.9rem}.donate-text p{color:rgba(255,255,255,.72);margin-bottom:1.1rem}
 .bank-card{background:rgba(255,255,255,.07);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:1.4rem;margin-top:1.4rem}
@@ -278,7 +278,7 @@ section{padding:80px 0}
       <a href="#causes">Our Work</a>
       <a href="#vision">Vision</a>
       <a href="#events">Events</a>
-      <a href="#books">Books</a>
+      <a href="#books">Publications</a>
       <a href="#volunteer">Volunteer</a>
       <a href="#team">Team</a>
       <a href="#contact">Contact</a>
@@ -293,7 +293,7 @@ section{padding:80px 0}
     <a href="#causes">Our Work</a>
     <a href="#vision">Vision &amp; Mission</a>
     <a href="#events">Events</a>
-    <a href="#books">Books</a>
+    <a href="#books">Publications</a>
     <a href="#volunteer">Volunteer</a>
     <a href="#team">Team</a>
     <a href="#contact">Contact</a>
@@ -313,10 +313,10 @@ section{padding:80px 0}
         <a href="#volunteer" class="btn btn-outline">Join as Volunteer</a>
       </div>
       <div class="hero-stats">
-        <div class="hero-stat"><strong>12,000+</strong><span>ml Blood Arranged</span></div>
-        <div class="hero-stat"><strong>6,500+</strong><span>Meals Provided</span></div>
-        <div class="hero-stat"><strong>950+</strong><span>Drawing Kits Given</span></div>
-        <div class="hero-stat"><strong>50+</strong><span>Volunteers</span></div>
+        <div class="hero-stat"><strong>10+</strong><span>years active</span></div>
+        <div class="hero-stat"><strong>100+</strong><span>Volunteers</span></div>
+        <div class="hero-stat"><strong>1000+</strong><span>Life transformed</span></div>
+        <div class="hero-stat"><strong>∞</strong><span>impact</span></div>
       </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
