@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,23 +48,23 @@ section{padding:80px 0}
 .btn-ghost{background:transparent;color:var(--forest);border:2px solid var(--forest)}.btn-ghost:hover{background:var(--forest);color:#fff}
 /* NAVBAR */
 #navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;transition:background var(--tr),box-shadow var(--tr)}
-#navbar.scrolled{background:#33527b;box-shadow:0 2px 20px rgba(0,0,0,.25)}
+#navbar.scrolled{background:#1e3a5c;box-shadow:0 2px 20px rgba(0,0,0,.3)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 1rem;width:min(1200px,95%);margin:0 auto}
 .nav-logo{display:flex;align-items:center}
-.nav-logo img{height:50px;width:auto;}
+.nav-logo img{height:60px;width:auto;}
 .nav-links{display:flex;align-items:center;gap:.15rem}
 .nav-links a{color:rgba(255,255,255,.88);font-size:.88rem;font-weight:500;padding:.4rem .7rem;border-radius:8px;transition:background var(--tr),color var(--tr)}
 .nav-links a:hover{background:rgba(255,255,255,.12);color:#fff}
 .nav-cta{margin-left:.5rem}
 .nav-ham{display:none;flex-direction:column;gap:5px;background:none;padding:.4rem}
 .nav-ham span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
-.mob-menu{display:none;flex-direction:column;background:var(--forest-dk);padding:1rem 1.5rem 1.5rem}
+.mob-menu{display:none;flex-direction:column;background:#1e3a5c;padding:1rem 1.5rem 1.5rem}
 .mob-menu.open{display:flex}
 .mob-menu a{color:rgba(255,255,255,.85);padding:.75rem 0;font-weight:500;border-bottom:1px solid rgba(255,255,255,.08);transition:color var(--tr)}
 .mob-menu a:last-child{border-bottom:none}.mob-menu a:hover{color:var(--gold)}
 @media(max-width:860px){.nav-links,.nav-cta{display:none}.nav-ham{display:flex}}
 /* HERO */
-#home{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 62% 38%,rgba(244,169,66,.22) 0%,transparent 68%),radial-gradient(ellipse 55% 75% at 8% 80%,rgba(232,101,42,.15) 0%,transparent 60%),linear-gradient(155deg,#33527b 0%,#06283f 100%);display:flex;align-items:center;padding-top:70px;position:relative;overflow:hidden}
+#home{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 62% 38%,rgba(244,169,66,.22) 0%,transparent 68%),radial-gradient(ellipse 55% 75% at 8% 80%,rgba(232,101,42,.15) 0%,transparent 60%),linear-gradient(155deg,#33527b 0%,#0d2418 100%);display:flex;align-items:center;padding-top:70px;position:relative;overflow:hidden}
 #home::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.045) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
 .hero-inner{width:min(1180px,92%);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;padding:5rem 0}
 .hero-text{position:relative;z-index:2}
@@ -78,7 +79,7 @@ section{padding:80px 0}
 .hero-visual{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
 .hcard{background:rgba(255,255,255,.09);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:1.25rem;transition:transform var(--tr)}
 .hcard:hover{transform:translateY(-4px)}
-.hcard:nth-child(1){margin-top:1.5rem}.hcard:nth-child(3){margin-top:1.5rem}
+.hcard:nth-child(2){margin-top:2rem}.hcard:nth-child(4){margin-top:2rem}
 .hcard-icon{font-size:1.5rem;margin-bottom:.5rem}
 .hcard h4{color:#fff;font-size:.92rem;font-family:var(--font-d);margin-bottom:.25rem}
 .hcard p{color:rgba(255,255,255,.62);font-size:.78rem;line-height:1.5}
@@ -107,6 +108,17 @@ section{padding:80px 0}
 .scope-item strong{display:block;color:var(--forest-dk);font-size:.93rem}
 .scope-item p{font-size:.86rem;margin:0}
 @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:3rem}.about-badge{bottom:-10px;right:10px}}
+/* CAROUSEL */
+.carousel{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3;background:var(--forest-dk)}
+.carousel-track{display:flex;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.carousel-slide{min-width:100%;height:100%;flex-shrink:0}
+.carousel-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);color:#fff;border:none;width:36px;height:36px;border-radius:50%;font-size:1.1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;transition:background var(--tr)}
+.carousel-btn:hover{background:rgba(0,0,0,.7)}
+.carousel-btn.prev{left:10px}.carousel-btn.next{right:10px}
+.carousel-dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:2}
+.carousel-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer;transition:background var(--tr),transform var(--tr)}
+.carousel-dot.active{background:#fff;transform:scale(1.25)}
 /* CAUSES */
 #causes{background:#eef3ee}
 .cause-card{background:var(--card-bg);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform var(--tr),box-shadow var(--tr);display:flex;flex-direction:column}
@@ -156,7 +168,7 @@ section{padding:80px 0}
 .cal-day.has-ev{background:#fff3e0;color:var(--saffron);font-weight:600}.cal-day.empty{cursor:default}
 @media(max-width:840px){.events-layout{grid-template-columns:1fr}.cal-widget{position:static}}
 /* DONATE */
-#donate{background:radial-gradient(ellipse 70% 60% at 20% 50%,rgba(44,110,73,.35) 0%,transparent 60%),radial-gradient(ellipse 60% 70% at 80% 30%,rgba(232,101,42,.2) 0%,transparent 55%),linear-gradient(135deg,#33527b  0%,#022009 100%);color:#fff}
+#donate{background:radial-gradient(ellipse 70% 60% at 20% 50%,rgba(44,110,73,.35) 0%,transparent 60%),radial-gradient(ellipse 60% 70% at 80% 30%,rgba(232,101,42,.2) 0%,transparent 55%),linear-gradient(135deg,#1b4332 0%,#0f2419 100%);color:#fff}
 .donate-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
 .donate-text h2{color:#fff;margin-bottom:.9rem}.donate-text p{color:rgba(255,255,255,.72);margin-bottom:1.1rem}
 .bank-card{background:rgba(255,255,255,.07);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:1.4rem;margin-top:1.4rem}
@@ -183,11 +195,35 @@ section{padding:80px 0}
 #books{background:var(--sand)}
 .book-card{background:var(--card-bg);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;text-align:center;transition:transform var(--tr),box-shadow var(--tr)}
 .book-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
-.book-cover{background:linear-gradient(135deg,var(--forest) 0%,var(--forest-dk) 100%);padding:1.75rem 1.25rem}
+.book-cover{background:linear-gradient(135deg,var(--forest) 0%,var(--forest-dk) 100%);padding:1.75rem 1.25rem;position:relative}
 .book-cover img{height:150px;width:auto;margin:0 auto;border-radius:5px;box-shadow:5px 5px 18px rgba(0,0,0,.35)}
 .book-info{padding:1.1rem}
 .book-info h4{color:var(--forest-dk);margin-bottom:.25rem;font-size:.95rem}
 .book-price{display:inline-block;background:var(--saffron);color:#fff;font-weight:700;font-size:.9rem;padding:.18rem .7rem;border-radius:20px;margin-bottom:.65rem}
+/* NEWSLETTER */
+#newsletter{background:#eef3ee}
+.newsletter-card{background:var(--card-bg);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;align-items:stretch;transition:transform var(--tr),box-shadow var(--tr);max-width:700px;margin:0 auto}
+.newsletter-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.newsletter-thumb{width:160px;min-width:160px;background:linear-gradient(135deg,#1B4332 0%,#0d2418 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;gap:.75rem;flex-shrink:0}
+.newsletter-thumb img{width:90px;border-radius:6px;box-shadow:4px 4px 14px rgba(0,0,0,.4)}
+.nl-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-align:center}
+.newsletter-body{padding:1.5rem 1.75rem;display:flex;flex-direction:column;justify-content:center;gap:.6rem}
+.newsletter-body h3{color:var(--forest-dk);font-size:1.1rem;margin:0}
+.newsletter-body p{font-size:.88rem;margin:0}
+.newsletter-meta{font-size:.75rem;color:var(--muted);font-style:italic}
+@media(max-width:580px){.newsletter-card{flex-direction:column}.newsletter-thumb{width:100%;min-width:unset;flex-direction:row;gap:1rem;padding:1rem 1.25rem}}
+/* GET INVOLVED */
+#get-involved{background:var(--sand)}
+.involve-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem}
+.involve-card{background:var(--card-bg);border-radius:var(--radius);box-shadow:var(--shadow);display:flex;gap:1.1rem;align-items:flex-start;padding:1.4rem;transition:transform var(--tr),box-shadow var(--tr)}
+.involve-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.involve-icon-wrap{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.involve-icon{font-size:1.5rem;line-height:1}
+.involve-content{flex:1}
+.involve-content h3{color:var(--forest-dk);font-size:1.05rem;margin-bottom:.4rem}
+.involve-content p{font-size:.87rem;margin-bottom:.7rem;line-height:1.65}
+.involve-cta{font-size:.82rem;font-weight:600;color:var(--saffron);transition:gap var(--tr)}
+.involve-cta:hover{text-decoration:underline}
 /* VOLUNTEER */
 #volunteer{background:#eef3ee}
 .vol-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start}
@@ -279,10 +315,10 @@ section{padding:80px 0}
       <a href="#vision">Vision</a>
       <a href="#events">Events</a>
       <a href="#books">Publications</a>
+      <a href="#get-involved">Get Involved</a>
       <a href="#volunteer">Volunteer</a>
       <a href="#team">Team</a>
       <a href="#contact">Contact</a>
-    </div>
     <a href="#donate" class="btn btn-primary nav-cta">&#10084; Donate</a>
     <button class="nav-ham" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -294,6 +330,7 @@ section{padding:80px 0}
     <a href="#vision">Vision &amp; Mission</a>
     <a href="#events">Events</a>
     <a href="#books">Publications</a>
+    <a href="#get-involved">Get Involved</a>
     <a href="#volunteer">Volunteer</a>
     <a href="#team">Team</a>
     <a href="#contact">Contact</a>
@@ -346,9 +383,11 @@ section{padding:80px 0}
   <div class="container">
     <div class="about-grid">
       <div class="about-img-wrap reveal">
-        <div class="about-img">
-          <img src="https://raw.githubusercontent.com/diptiman-b/anuranan-basic/main/images/events/book5.jpeg" alt="Anuranan community event" loading="lazy"
-               onerror="this.src='https://www.anuranan.org.in/images/events/book5.jpeg'" />
+        <div class="carousel" id="aboutCarousel">
+          <div class="carousel-track" id="carouselTrack"></div>
+          <button class="carousel-btn prev" id="carPrev" aria-label="Previous image">&#8249;</button>
+          <button class="carousel-btn next" id="carNext" aria-label="Next image">&#8250;</button>
+          <div class="carousel-dots" id="carDots"></div>
         </div>
         <div class="about-badge"><strong>Since</strong><span>2010s</span></div>
       </div>
@@ -536,11 +575,11 @@ section{padding:80px 0}
 </section>
 
 
-<section id="books" aria-label="Publications">
+<section id="books" aria-label="Publications and Newsletter">
   <div class="container">
     <div class="text-center reveal">
       <span class="eyebrow">Ja Ichchhe Tai</span>
-      <h2 class="section-title">Support Us Through Books</h2>
+      <h2 class="section-title">Publications</h2>
       <div class="divider"></div>
       <p class="section-sub">Purchase our publication series &mdash; all proceeds fund community programs and outreach activities.</p>
     </div>
@@ -551,6 +590,120 @@ section{padding:80px 0}
   </div>
 </section>
 
+<section id="newsletter" aria-label="Newsletter">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Stay Informed</span>
+      <h2 class="section-title">Our Newsletter</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="newsletter-card reveal">
+      <div class="newsletter-thumb">
+        <img src="https://raw.githubusercontent.com/diptiman-b/anuranan-basic/main/images/publication/book1.png"
+             alt="Newsletter thumbnail"
+             onerror="this.src='https://www.anuranan.org.in/images/publication/book1.png'" />
+        <span class="nl-label">Newsletter<br>2025</span>
+      </div>
+      <div class="newsletter-body">
+        <h3>Anuranan Newsletter &mdash; 2025</h3>
+        <p>Our annual newsletter highlighting the year&rsquo;s key activities, impact stories, community events, and upcoming initiatives. Read about the lives we&rsquo;ve touched and the work that continues to grow.</p>
+        <p class="newsletter-meta">Published 2025 &middot; PDF &middot; Anuranan</p>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.25rem;">
+          <a href="https://raw.githubusercontent.com/diptiman-b/anuranan-basic/main/media/newsletter/Anuranan%20Newsletter_2025.pdf"
+             target="_blank" rel="noopener" class="btn btn-green" style="font-size:.85rem;padding:.55rem 1.2rem;">
+            &#128196; Read Newsletter
+          </a>
+          <a href="https://raw.githubusercontent.com/diptiman-b/anuranan-basic/main/media/newsletter/Anuranan%20Newsletter_2025.pdf"
+             download class="btn btn-ghost" style="font-size:.85rem;padding:.55rem 1.2rem;">
+            &#8681; Download PDF
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="get-involved" aria-label="How to Get Involved">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Make a Difference</span>
+      <h2 class="section-title">How to Get Involved</h2>
+      <div class="divider"></div>
+      <p class="section-sub">There are many ways you can get involved with Anuranan. Some of them are listed below.</p>
+    </div>
+
+    <div class="involve-grid" style="margin-top:2.5rem;">
+
+      <div class="involve-card reveal">
+        <div class="involve-icon-wrap" style="background:#fff3e0;">
+          <span class="involve-icon">&#128176;</span>
+        </div>
+        <div class="involve-content">
+          <h3>Lump Sum Donation</h3>
+          <p>Make a one-time contribution to Anuranan for executing social development work. Every rupee goes directly towards our programs and community initiatives.</p>
+          <a href="#donate" class="involve-cta">Donate Now &#8594;</a>
+        </div>
+      </div>
+
+      <div class="involve-card reveal">
+        <div class="involve-icon-wrap" style="background:#eafaf1;">
+          <span class="involve-icon">&#128197;</span>
+        </div>
+        <div class="involve-content">
+          <h3>Monthly Donation</h3>
+          <p>Donate a small amount every month that will be channelised to the most needy beneficiaries to help meet their basic requirements consistently.</p>
+          <a href="#donate" class="involve-cta">Set Up Monthly &#8594;</a>
+        </div>
+      </div>
+
+      <div class="involve-card reveal">
+        <div class="involve-icon-wrap" style="background:#fde8e8;">
+          <span class="involve-icon">&#10084;&#65039;</span>
+        </div>
+        <div class="involve-content">
+          <h3>Tribute Donation</h3>
+          <p>Offer monetary support in honour or in memory of your loved ones. A meaningful way to celebrate a life while creating a lasting impact for others.</p>
+          <a href="#donate" class="involve-cta">Give in Tribute &#8594;</a>
+        </div>
+      </div>
+
+      <div class="involve-card reveal">
+        <div class="involve-icon-wrap" style="background:#e8f4f8;">
+          <span class="involve-icon">&#127869;&#65039;</span>
+        </div>
+        <div class="involve-content">
+          <h3>Donate a Square Meal</h3>
+          <p>Sponsor a feeding program for a needy child or other disadvantaged individuals. A birthday or anniversary is an ideal occasion to feed the needy and receive their heartfelt blessings.</p>
+          <a href="#contact" class="involve-cta">Arrange a Meal &#8594;</a>
+        </div>
+      </div>
+
+      <div class="involve-card reveal">
+        <div class="involve-icon-wrap" style="background:#f5eef8;">
+          <span class="involve-icon">&#127878;</span>
+        </div>
+        <div class="involve-content">
+          <h3>Celebrate with the Needy</h3>
+          <p>Celebrate your birthday or anniversary with someone who needs personal belongingness, sympathy, and respect. Turn your special day into a day of shared joy.</p>
+          <a href="#contact" class="involve-cta">Plan a Celebration &#8594;</a>
+        </div>
+      </div>
+
+      <div class="involve-card reveal">
+        <div class="involve-icon-wrap" style="background:#eef3ee;">
+          <span class="involve-icon">&#128218;</span>
+        </div>
+        <div class="involve-content">
+          <h3>Buy Our Publications</h3>
+          <p>Support us by purchasing our <em>Ja Ichchhe Tai</em> book series. All proceeds go directly towards our community initiatives and outreach programs.</p>
+          <a href="#books" class="involve-cta">View Publications &#8594;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <section id="volunteer" aria-label="Volunteer">
   <div class="container">
@@ -611,9 +764,9 @@ section{padding:80px 0}
         <div class="l-placeholder" style="display:none;">&#9733;</div>
         <h4>Shri Tamal Kumar Ray</h4><span>Chairperson</span>
       </div>
-      <div class="leader-card">
-        <div class="l-placeholder">&#9733;</div>
-        <h4>Shri Malay Ghosh</h4><span>Managing Trustee</span>
+      <div >
+        <div ></div>
+        
       </div>
     </div>
     <div class="chip-section reveal">
@@ -622,6 +775,7 @@ section{padding:80px 0}
         <span class="chip">Gautam Bhattacharya &mdash; Retired Chief Post Master General</span>
         <span class="chip">Smt. Madhumita Roy &mdash; Retired IAS</span>
         <span class="chip">Sekhar Sengupta &mdash; Retired Joint Secretary</span>
+        <span class="chip">Malay Ghosh &mdash; Managing Trustee</span>
       </div>
     </div>
     <div class="chip-section reveal">
@@ -732,6 +886,7 @@ section{padding:80px 0}
         <h5>Get Involved</h5>
         <ul>
           <li><a href="#donate">Donate</a></li>
+          <li><a href="#get-involved">Get Involved</a></li>
           <li><a href="#volunteer">Volunteer</a></li>
           <li><a href="#books">Buy Books</a></li>
           <li><a href="#contact">Partner With Us</a></li>
@@ -873,20 +1028,98 @@ var bookData = [
   {vol:'Vol 2', price:'Rs.350', img:'publication/book2.png', fb:'book2.png'},
   {vol:'Vol 3', price:'Rs.350', img:'publication/book3.png', fb:'book3.png'},
   {vol:'Vol 4', price:'Rs.399', img:'publication/book4.png', fb:'book4.png'},
-  {vol:'Vol 5', price:'Rs.399', img:'publication/book5.png', fb:'book5.png'}
+  {vol:'Vol 5', price:'Rs.399', img:'publication/book5.png', fb:'book5.png'},
+  {vol:'Vol 6', price:'Coming Soon', img:'publication/book1.png', fb:'book1.png', upcoming:true}
 ];
 var bg = document.getElementById('booksGrid');
 bookData.forEach(function(b) {
   var card = document.createElement('div');
   card.className = 'book-card reveal';
-  card.innerHTML = '<div class="book-cover"><img src="' + GH + '/' + b.img + '" alt="Ja Ichchhe Tai ' + b.vol + '" loading="lazy" onerror="this.src=\'' + FB + '/' + b.fb + '\'"></div>'
+  var orderBtn = b.upcoming
+    ? '<span class="book-price" style="background:var(--muted);font-size:.78rem;">Coming Soon</span>'
+    : '<a href="mailto:mailtoanuranan@gmail.com?subject=Book Order - Ja Ichchhe Tai ' + b.vol + '" class="btn btn-ghost" style="font-size:.8rem;padding:.38rem .9rem;">Order</a>';
+  card.innerHTML = '<div class="book-cover">'
+    + (b.upcoming ? '<div style="position:absolute;top:10px;right:10px;background:var(--gold);color:#000;font-size:.65rem;font-weight:700;padding:.2rem .5rem;border-radius:10px;letter-spacing:.05em;">NEW</div>' : '')
+    + '<img src="' + GH + '/' + b.img + '" alt="Ja Ichchhe Tai ' + b.vol + '" loading="lazy" onerror="this.src=\'' + FB + '/' + b.fb + '\'">'
+    + '</div>'
     + '<div class="book-info"><h4>Ja Ichchhe Tai</h4>'
     + '<div class="book-price">' + b.vol + ' &mdash; ' + b.price + '</div>'
-    + '<a href="mailto:mailtoanuranan@gmail.com?subject=Book Order - Ja Ichchhe Tai ' + b.vol + '" class="btn btn-ghost" style="font-size:.8rem;padding:.38rem .9rem;">Order</a>'
+    + orderBtn
     + '</div>';
   bg.appendChild(card);
   revObs.observe(card);
 });
+
+// Carousel
+(function() {
+  var eventImages = [
+    'eventImages/03AA.jpg','eventImages/03BB.jpg','eventImages/03CC.jpg',
+    'eventImages/03DD.jpg','eventImages/03EE.jpg','eventImages/03FF.jpg',
+    'eventImages/03GG.jpg','eventImages/03II.jpg','eventImages/03JJ.jpg'
+  ];
+  var GHB = 'https://raw.githubusercontent.com/diptiman-b/anuranan-basic/main/images/';
+  var track = document.getElementById('carouselTrack');
+  var dotsEl = document.getElementById('carDots');
+  var current = 0;
+  var loaded = [];
+  var total = eventImages.length;
+
+  // Build slides
+  eventImages.forEach(function(src, i) {
+    var slide = document.createElement('div');
+    slide.className = 'carousel-slide';
+    var img = document.createElement('img');
+    img.alt = 'Anuranan event ' + (i+1);
+    img.loading = i === 0 ? 'eager' : 'lazy';
+    // Try GitHub first, fallback to original site
+    var ghSrc = GHB + src;
+    var fbSrc = 'https://www.anuranan.org.in/images/' + src;
+    img.src = ghSrc;
+    img.onerror = (function(fb, gh) {
+      var tried = false;
+      return function() {
+        if (!tried) { tried = true; this.src = fb; }
+        else { this.closest('.carousel-slide').style.display = 'none'; goSlide(current + 1); }
+      };
+    })(fbSrc, ghSrc);
+    slide.appendChild(img);
+    track.appendChild(slide);
+    loaded.push(i);
+
+    // Dot
+    var dot = document.createElement('div');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', function() { goSlide(i); });
+    dotsEl.appendChild(dot);
+  });
+
+  function goSlide(n) {
+    current = ((n % total) + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dotsEl.querySelectorAll('.carousel-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  document.getElementById('carPrev').addEventListener('click', function() { goSlide(current - 1); });
+  document.getElementById('carNext').addEventListener('click', function() { goSlide(current + 1); });
+
+  // Auto-advance every 3.5s
+  var autoTimer = setInterval(function() { goSlide(current + 1); }, 3500);
+  var carousel = document.getElementById('aboutCarousel');
+  carousel.addEventListener('mouseenter', function() { clearInterval(autoTimer); });
+  carousel.addEventListener('mouseleave', function() {
+    autoTimer = setInterval(function() { goSlide(current + 1); }, 3500);
+  });
+
+  // Touch swipe
+  var startX = 0;
+  carousel.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, {passive:true});
+  carousel.addEventListener('touchend', function(e) {
+    var diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goSlide(diff > 0 ? current + 1 : current - 1);
+  }, {passive:true});
+})();
 </script>
 </body>
 </html>
